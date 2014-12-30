@@ -11,6 +11,7 @@
 		infrastructure -->
 
 	<!-- Enables the Spring MVC @Controller programming model -->
+	<context:property-placeholder />
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving 
@@ -29,9 +30,9 @@
 		destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:mysql://localhost:3306/TestDB" />
-		<beans:property name="username" value="wanmei" />
-		<beans:property name="password" value="wanmei" />
+			value="jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${MYSQL_DB}" />
+		<beans:property name="username" value="${MYSQL_USER}" />
+		<beans:property name="password" value="${MYSQL_PASSWORD}" />
 	</beans:bean>
 
 	<!-- Hibernate 4 SessionFactory Bean definition -->
