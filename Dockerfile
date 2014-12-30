@@ -37,7 +37,7 @@ ADD src /code/src
 RUN ["mvn", "package"]
 
 ### install ###
-#RUN cp target/wanmei_demo.war $CATALINA_HOME/webapps/
+RUN cp target/wanmei_demo.war $CATALINA_HOME/webapps/
 
 ### run ###
 EXPOSE 8080
